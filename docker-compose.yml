@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  orient:
+    image: orientdb:2.2.24-spatial
+    container_name: orientdb_play
+    volumes:
+      - ".orientdb/databases:/orientdb/databases"
+      - ".orientdb/backup:/orientdb/backup"
+    ports:
+      - 2424:2424
+      - 2480:2480
+    environment:
+      - ORIENTDB_ROOT_PASSWORD=rootpwd
